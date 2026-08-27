@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 815 1245" role="img" aria-labelledby="title description">
+  <title id="title">An LLM harness and one example request</title>
+  <desc id="description">The compact first panel shows an LLM connected to tool calls, Markdown files, memory, and a code runtime. The larger second panel traces a request through context preparation, the LLM, a tool call, a response, and a memory update.</desc>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#173f34" flood-opacity="0.10"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2c6554"/></marker>
+    <style>
+      .panel { fill: #fff; stroke: #2c6554; stroke-width: 2.2; }
+      .node { fill: #f5f3ee; stroke: #ddd8ce; stroke-width: 1.2; filter: url(#shadow); }
+      .node-green { fill: #e5efe9; stroke: #c5d8ce; stroke-width: 1.2; filter: url(#shadow); }
+      .pill { fill: #2c6554; }
+      .pill-text { fill: #fff; font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1.3px; }
+      .title { fill: #1f211f; font: 700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title-large { fill: #1f211f; font: 700 29px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .body { fill: #646762; font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .body-dark { fill: #323532; font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .code { fill: #2c6554; font: 600 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .label { fill: #676a66; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .line { fill: none; stroke: #2c6554; stroke-width: 2.3; marker-end: url(#arrow); }
+      .line-bi { fill: none; stroke: #2c6554; stroke-width: 2.3; marker-start: url(#arrow); marker-end: url(#arrow); }
+      .line-soft { fill: none; stroke: #6e8f83; stroke-width: 1.8; marker-end: url(#arrow); }
+      .context-line { fill: none; stroke: #6e8f83; stroke-width: 1.8; }
+      .icon { fill: none; stroke: #2c6554; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+      .icon-fill { fill: #2c6554; }
+    </style>
+  </defs>
+
+  <rect width="815" height="1245" fill="#fff"/>
+
+  <!-- Compact overview -->
+  <rect class="panel" x="25" y="35" width="765" height="380" rx="17"/>
+  <rect class="pill" x="48" y="18" width="116" height="34" rx="17"/>
+  <text class="pill-text" x="106" y="41" text-anchor="middle">HARNESS</text>
+
+  <rect class="node" x="65" y="92" width="210" height="91" rx="14"/>
+  <g transform="translate(82 109)"><rect class="icon" width="30" height="25" rx="4"/><path class="icon" d="M8 8l5 4-5 4M17 17h6"/></g>
+  <text class="title" x="126" y="128">Tool calls</text>
+  <text class="body" x="82" y="157">act on the outside world</text>
+
+  <rect class="node" x="540" y="92" width="210" height="91" rx="14"/>
+  <g transform="translate(557 108)"><path class="icon" d="M3 0h20l7 7v24H3zM23 0v8h7M9 15h14M9 21h14M9 27h10"/></g>
+  <text class="title" x="599" y="128">Markdown files</text>
+  <text class="body" x="557" y="157">instructions and state</text>
+
+  <rect class="node-green" x="310" y="200" width="195" height="96" rx="18"/>
+  <g transform="translate(332 228) scale(.82)">
+    <path class="icon" d="M4 10L27 4M4 10L27 25M4 40L27 25M4 40L27 46M27 4L50 10M27 4L50 40M27 25L50 10M27 25L50 40M27 46L50 10M27 46L50 40"/>
+    <circle class="icon-fill" cx="4" cy="10" r="4"/><circle class="icon-fill" cx="4" cy="40" r="4"/><circle class="icon-fill" cx="27" cy="4" r="4"/><circle class="icon-fill" cx="27" cy="25" r="4"/><circle class="icon-fill" cx="27" cy="46" r="4"/><circle class="icon-fill" cx="50" cy="10" r="4"/><circle class="icon-fill" cx="50" cy="40" r="4"/>
+  </g>
+  <text class="title-large" x="402" y="260">LLM</text>
+
+  <rect class="node" x="65" y="322" width="280" height="68" rx="13"/>
+  <g transform="translate(85 339)"><ellipse class="icon" cx="16" cy="5" rx="14" ry="5"/><path class="icon" d="M2 5v20c0 3 6 5 14 5s14-2 14-5V5M2 15c0 3 6 5 14 5s14-2 14-5"/></g>
+  <text class="title" x="132" y="351">Memory</text>
+  <text class="body" x="132" y="374">retrieve and update</text>
+
+  <rect class="node" x="470" y="322" width="280" height="68" rx="13"/>
+  <g transform="translate(490 340)"><rect class="icon" width="28" height="23" rx="4"/><path class="icon" d="M7 7l4 4-4 4M15 16h7"/></g>
+  <text class="title" x="534" y="350">Code runtime</text>
+  <text class="body" x="534" y="374">shell · Python · sandbox</text>
+
+  <path class="line-bi" d="M170 183 V230 H310"/><text class="label" x="215" y="219" text-anchor="middle">call / result</text>
+  <path class="line-bi" d="M645 183 V230 H505"/><text class="label" x="600" y="219" text-anchor="middle">read / write</text>
+  <path class="line-bi" d="M205 322 V270 H310"/><text class="label" x="257" y="260" text-anchor="middle">recall / store</text>
+  <path class="line-bi" d="M610 322 V270 H505"/><text class="label" x="558" y="260" text-anchor="middle">execute / result</text>
+
+  <!-- Expanded request example -->
+  <rect class="panel" x="25" y="455" width="765" height="765" rx="17"/>
+  <rect class="pill" x="48" y="438" width="126" height="34" rx="17"/>
+  <text class="pill-text" x="111" y="461" text-anchor="middle">EXAMPLE</text>
+
+  <rect class="node" x="140" y="500" width="535" height="78" rx="13"/>
+  <text class="label" x="160" y="524">USER REQUEST</text>
+  <text class="title" x="160" y="553">“Organize the files in my Downloads folder.”</text>
+
+  <path class="line-soft" d="M408 578 V615"/><text class="label" x="423" y="602">prepare context</text>
+  <path class="context-line" d="M165 625 H650"/><path class="context-line" d="M165 625 V645 M408 615 V645 M650 625 V645"/>
+
+  <rect class="node" x="55" y="645" width="220" height="108" rx="12"/>
+  <text class="title" x="73" y="674">Read instructions</text><text class="code" x="73" y="704">read("AGENTS.md")</text><text class="body" x="73" y="732">→ project rules</text>
+
+  <rect class="node" x="298" y="645" width="220" height="108" rx="12"/>
+  <text class="title" x="316" y="674">Read available tools</text><text class="code" x="316" y="704">list_tools()</text><text class="body" x="316" y="732">→ tool definitions</text>
+
+  <rect class="node" x="540" y="645" width="220" height="108" rx="12"/>
+  <text class="title" x="558" y="674">Read recent memory</text><text class="code" x="558" y="704">memory.recent()</text><text class="body" x="558" y="732">→ relevant history</text>
+
+  <path class="context-line" d="M165 753 V780 H650 V753 M408 753 V780"/><path class="line-soft" d="M408 780 V800"/>
+
+  <rect class="node-green" x="205" y="800" width="405" height="78" rx="13"/>
+  <text class="title" x="225" y="830">Build model input</text><text class="body" x="225" y="857">request + instructions + tools + memory</text>
+  <path class="line-soft" d="M408 878 V910"/>
+
+  <rect class="node-green" x="85" y="915" width="290" height="125" rx="15"/>
+  <g transform="translate(109 944) scale(.68)">
+    <path class="icon" d="M4 10L27 4M4 10L27 25M4 40L27 25M4 40L27 46M27 4L50 10M27 4L50 40M27 25L50 10M27 25L50 40M27 46L50 10M27 46L50 40"/>
+    <circle class="icon-fill" cx="4" cy="10" r="4"/><circle class="icon-fill" cx="4" cy="40" r="4"/><circle class="icon-fill" cx="27" cy="4" r="4"/><circle class="icon-fill" cx="27" cy="25" r="4"/><circle class="icon-fill" cx="27" cy="46" r="4"/><circle class="icon-fill" cx="50" cy="10" r="4"/><circle class="icon-fill" cx="50" cy="40" r="4"/>
+  </g>
+  <text class="title-large" x="163" y="972">LLM</text><text class="body-dark" x="109" y="1004">sees request + context</text><text class="body-dark" x="109" y="1027">chooses <tspan class="code">run_python(...)</tspan></text>
+
+  <rect class="node" x="495" y="920" width="250" height="118" rx="13"/>
+  <text class="title" x="515" y="946">Execute tool</text><text class="code" x="515" y="970">run_python(</text><text class="code" x="532" y="990">"organize_files.py"</text><text class="code" x="515" y="1010">)</text><text class="label" x="515" y="1028">→ 17 files moved</text>
+
+  <path class="line" d="M375 951 H485"/><text class="label" x="430" y="942" text-anchor="middle">tool call</text>
+  <path class="line" d="M495 1015 H385"/><text class="label" x="440" y="1035" text-anchor="middle">tool output</text>
+
+  <path class="line-soft" d="M230 1040 V1098"/>
+  <path class="line-soft" d="M230 1040 V1075 H590 V1098"/>
+
+  <rect class="node" x="75" y="1098" width="300" height="78" rx="12"/>
+  <text class="title" x="95" y="1126">Craft response</text><text class="body-dark" x="95" y="1155">“Done. 17 files organized by type.”</text>
+
+  <rect class="node" x="440" y="1098" width="300" height="78" rx="12"/>
+  <text class="title" x="460" y="1126">Update memory</text><text class="code" x="460" y="1155">memory.write("sorting rule")</text>
+</svg>
