@@ -1,3 +1,6 @@
-:HL["/_next/static/chunks/0-2k85~ha8rnn.css","style"]
+:HL["/_next/static/css/e661c22a76c6b3b6.css","style"]
 :HL["/images/writing-flow-3d-animated-v5.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"writing","param":null,"prefetchHints":0,"slots":{"children":{"name":"what-it-means-to-use-ai-for-x","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"z2ZjJKQ8b57sHh0qJZ1U-"}
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":"what-it-means-to-use-ai-for-x","h":96,"c":"$Q3"}]]
+1:[["children",{"s":"writing","h":96,"c":"$Q2"}]]
+0:{"b":"_d747T37smc6H28yI8qX5","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
